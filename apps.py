@@ -12,7 +12,7 @@ from xgboost import XGBClassifier
 import matplotlib.pyplot as plt
 import time
 
-with open("data/hungarian.data", encoding='Latin') as file:
+with open("hungarian.data", encoding='Latin') as file:
     lines = [line.strip() for line in file]
 
 data = itertools.takewhile(
