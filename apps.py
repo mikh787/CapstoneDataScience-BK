@@ -136,7 +136,7 @@ xgb_model = XGBClassifier(learning_rate=0.1, n_estimators=100, random_state=42)
 xgb_model.fit(X_train, y_train)
 y_pred_xgb = xgb_model.predict(X_test)
 
-y_pred = knn_model.predict(X_train)
+y_pred = xgb_model.predict(X_train)
 accuracy = accuracy_score(y_train, y_pred)
 accuracy = round((accuracy * 100), 2)
 
@@ -293,7 +293,7 @@ with tab2 :
 
     if file_uploaded:
         uploaded_df = pd.read_csv(file_uploaded)
-        prediction_arr = knn_model.predict(uploaded_df)
+        prediction_arr = xgb_model.predict(uploaded_df)
 
         bar = st.progress(0)
         status_text = st.empty()
